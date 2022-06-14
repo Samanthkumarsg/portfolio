@@ -64,8 +64,8 @@ function DetailsBox({ description, title, date, data }) {
                 <motion.div className="bg-white grid col-span-3 items-start justify-start " animate={showExplore == true ? { opacity: [0, 1], translate: [100, 0] } : { opacity: [0, 1] }} transition={{ delay: 1 }}>
 
                     <motion.div className="w-full" animate={{ opacity: [0, 1], translateX: [0, 0], }}>
-                        {data?.employementHistory.workDescription.map((dataList) => {
-                            return <li className="text-sm w-full my-3">{dataList}</li>
+                        {data?.employementHistory.workDescription.map((dataList, id) => {
+                            return <li className="text-sm w-full my-3" key={id}>{dataList}</li>
                         })}
                     </motion.div>
                     <motion.div className="w-full flex flex-row items-center justify-between mt-4" animate={{ opacity: [0, 1], translateX: [0, 0], }}>
